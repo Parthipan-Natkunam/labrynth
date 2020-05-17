@@ -1,6 +1,9 @@
 package main
 
-import "github.com/gofiber/fiber"
+import (
+	"github.com/Parthipan-Natkunam/labrynth/config"
+	"github.com/gofiber/fiber"
+)
 
 func testHandler(ctx *fiber.Ctx) {
 	ctx.Send("Fiber Set-up Successfully")
@@ -14,5 +17,5 @@ func main() {
 	app := fiber.New()
 
 	setupRoutes(app)
-	app.Listen(3000)
+	app.Listen(config.PORT)
 }

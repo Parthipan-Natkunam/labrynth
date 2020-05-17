@@ -1,2 +1,5 @@
 #Checksum file
 go.sum
+
+#env file
+.env
