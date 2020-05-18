@@ -24,7 +24,16 @@ func getAPIPort() int {
 	return port
 }
 
+func getVersionedNamespace() string {
+	version := getEnvVariable("VERSION")
+	namespace := getEnvVariable("NAMESPACE")
+	versionedNamespace := "/" + namespace + "/" + version
+	return versionedNamespace
+}
+
 var (
 	//PORT API Server Port
 	PORT = getAPIPort()
+	//APIROOT API Namespace With Version
+	APIROOT = getVersionedNamespace()
 )

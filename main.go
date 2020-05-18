@@ -2,15 +2,12 @@ package main
 
 import (
 	"github.com/Parthipan-Natkunam/labrynth/config"
+	"github.com/Parthipan-Natkunam/labrynth/controllers"
 	"github.com/gofiber/fiber"
 )
 
-func testHandler(ctx *fiber.Ctx) {
-	ctx.Send("Fiber Set-up Successfully")
-}
-
 func setupRoutes(app *fiber.App) {
-	app.Get("/", testHandler)
+	app.Get(config.APIROOT+"/list", controllers.GetDefault)
 }
 
 func main() {
